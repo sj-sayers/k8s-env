@@ -16,9 +16,7 @@ spec:
     path: base/cluster-addons/newrelic
     targetRevision: HEAD
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: newrelic-system
   syncPolicy:
-    automated:
-      prune: true 
-      selfHeal: false
+    automated: {}
