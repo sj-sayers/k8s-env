@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-autoscaler
+  namespace: kubesystem
+spec:
+  syncPolicy:
+    automated: {}
+  destination:
+    namespace: kubesystem
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: autoscaler/cluster-autoscaler/cloudprovider/aws/
+    repoURL: https://github.com/sj-
+    targetRevision: v0.8.3
