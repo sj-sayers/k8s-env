@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cluster-autoscaler
-  namespace: kubesystem
+  namespace: kube-system
 spec:
   syncPolicy:
     automated: {}
@@ -11,6 +11,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: autoscaler/cluster-autoscaler/cloudprovider/aws/
-    repoURL: https://github.com/sj-
+    path: base/cluster-addons/cluster-autoscaler/
+    repoURL: https://github.com/sj-sayers/k8s-env.git
     targetRevision: v0.8.3
