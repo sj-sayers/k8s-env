@@ -11,6 +11,5 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: base/cluster-addons/cluster-autoscaler/
+    path: base/cluster-addons/cluster-autoscaler
     repoURL: https://github.com/sj-sayers/k8s-env.git
-    targetRevision: v0.8.3
