@@ -7,9 +7,10 @@ spec:
   syncPolicy:
     automated: {}
   destination:
-    namespace: kubesystem
+    namespace: kube-system
     server: https://kubernetes.default.svc
   project: default
   source:
     path: base/cluster-addons/cluster-autoscaler
     repoURL: https://github.com/sj-sayers/k8s-env.git
+    targetRevision: master
