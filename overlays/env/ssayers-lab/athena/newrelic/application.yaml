@@ -1,0 +1,24 @@
+---
+# ArgoCD Application Management Manifest
+
+#######
+# CONFIGURE NEW RELIC
+######
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: newrelic
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/sj-sayers/k8s-env.git'
+    path: base/cluster-addons/newrelic
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: newrelic-system
+  syncPolicy:
+    automated:
+      prune: true 
+      selfHeal: false
